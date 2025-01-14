@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header class="header">
@@ -19,8 +19,8 @@
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="#" class="btn login">Login</a> 
-                <a href="#" class="btn signup">Sign Up</a> 
+                <a href="login.php" class="btn login">Login</a> 
+                <a href="register.php" class="btn signup">Sign Up</a> 
             </div>
         </div>
     </header>
