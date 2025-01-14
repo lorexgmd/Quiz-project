@@ -1,14 +1,42 @@
 <?php
+require 'config.php';
 
-include 'functions.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username']);
+    $password = $_POST['password'];
 
+    if (empty($username) || empty($password)) {
+        echo "Vul alle velden in!";
+    } else {
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+        $stmt->execute(['username' => $username]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($password, $user['password'])) {
+            session_start();
+            
+            session_regenerate_id(true);
+
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role'];
+            
+            $redirect = isset($_SESSION['redirect_url']) ? $_SESSION['redirect_url'] : 'index.php';
+            header("Location: $redirect");
+            exit;
+        } else {
+            echo "Ongeldige inloggegevens!";
+        }
+    }
+}
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles/styleLogin.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -36,17 +64,15 @@ include 'functions.php';
 
 <main class="main">
 <div class="form-container">
-        <h1>Login</h1>
-        <p>Log in op uw account</p>
+    <h1>Login</h1>
+    <p>Log in op uw account</p>
 
-    <form action="register.php" method="">
-
+    <form action="login.php" method="POST">
         <label for="username">Gebruikersnaam:</label>
         <input type="text" name="username" id="username" placeholder="Voer je gebruikersnaam in" required>
 
         <br><label for="password">Wachtwoord:</label>
-        <input type="password" name="password" id="password" placeholder="Voer je password in" required>
-
+        <input type="password" name="password" id="password" placeholder="Voer je wachtwoord in" required>
 
         <br><button type="submit" class="btn-login">Login</button>
 
@@ -83,5 +109,9 @@ include 'functions.php';
             <p>© 2024 QuizApp. Alle rechten voorbehouden.</p>
         </div>
     </footer>
+
+        </p>
+    </form>
+</div>
 </body>
 </html>
