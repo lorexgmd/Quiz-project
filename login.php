@@ -1,7 +1,7 @@
 <?php
 
 include 'functions.php';
-databaseConnect();
+
 ?>
 
 <html lang="en">

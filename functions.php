@@ -1,7 +1,4 @@
 <?php
-
-function databaseConnect()
-{
     $servername = "82.165.51.200";
     $username = "u42_ZFmn4UQD3o";
     $password = "z4v=y=rmN+wBtMSk+4ZiZBbF";
@@ -13,5 +10,4 @@ function databaseConnect()
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
-}
 ?>
