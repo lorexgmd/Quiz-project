@@ -1,33 +1,27 @@
 <?php
-require 'config.php'; // Maak verbinding met de database
+require 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Haal de gegevens uit het formulier
     $username = trim($_POST['username']);
     $password = $_POST['password'];
     $role = $_POST['role'];
 
-    // Controleer of alle velden ingevuld zijn
     if (empty($username) || empty($password) || empty($role)) {
         echo "Alle velden zijn verplicht!";
     } else {
-        // Controleer of de gebruikersnaam al bestaat
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
         $stmt->execute(['username' => $username]);
         if ($stmt->rowCount() > 0) {
             echo "Gebruikersnaam bestaat al!";
         } else {
-            // Hash het wachtwoord
             $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-            // Voeg de gebruiker toe aan de database
             $stmt = $pdo->prepare("INSERT INTO users (username, password, role) VALUES (:username, :password, :role)");
             $stmt->execute([
                 'username' => $username,
                 'password' => $hashedPassword,
                 'role' => $role
             ]);
-
             echo "Registratie succesvol! <a href='login.php'>Log hier in</a>";
         }
     }
