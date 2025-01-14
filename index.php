@@ -26,6 +26,7 @@ session_start();
             <div class="auth-buttons">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <a href="logout.php" class="btn logout">Uitloggen</a>
+                    <a href="profile.php" class="btn profile">Profiel</a>
                 <?php else: ?>
                     <a href="login.php" class="btn login">Login</a> 
                     <a href="register.php" class="btn signup">Sign Up</a>
@@ -37,6 +38,16 @@ session_start();
     <main class="main">
         <div class="container">
             <h2>Welkom bij de Quiz App</h2>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <h3><?php echo $_SESSION['username']?></h3>
+            <?php else: ?>
+                <h3>Je bent niet ingelogd.</h3>
+            <?php endif;?>
+            <?php
+            if (isset($_SESSION['user_id'])): ?>
+                <p>Je bent ingelogd als <?php echo $_SESSION['role'];
+            endif;
+            ?>
             <p>Test je kennis met onze uitdagende quizzen</p>
             <div class="cards"> 
                 <div class="card"> 
