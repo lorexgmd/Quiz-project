@@ -16,19 +16,19 @@ session_start();
             <h1 class="logo">QuizApp</h1>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="quizzen.php">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
                     <li><a href="#">Over Ons</a></li>
                 </ul>
             </nav>
-            
+
             <div class="auth-buttons">
-                <?php if (isset($_SESSION['user_id'])): ?>
+            <?php if (isset($_SESSION['user_id'])): ?>
                     <a href="logout.php" class="btn logout">Uitloggen</a>
                 <?php else: ?>
-                    <a href="login.php" class="btn login">Login</a> 
-                    <a href="register.php" class="btn signup">Sign Up</a>
+                <a href="login.php" class="btn login">Login</a> 
+                <a href="register.php" class="btn signup">Sign Up</a> 
                 <?php endif; ?>
             </div>
         </div>
@@ -61,8 +61,8 @@ session_start();
         </div>
     </main>
 
-    
-    
+
+
 
     <footer class="footer">
         <div class="container footer-content"> 
@@ -90,4 +90,4 @@ session_start();
         </div>
     </footer>
 </body>
-</html>
+</html>  
