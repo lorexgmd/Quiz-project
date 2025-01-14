@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -18,9 +22,14 @@
                     <li><a href="#">Over Ons</a></li>
                 </ul>
             </nav>
+            
             <div class="auth-buttons">
-                <a href="login.php" class="btn login">Login</a> 
-                <a href="register.php" class="btn signup">Sign Up</a> 
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="logout.php" class="btn logout">Uitloggen</a>
+                <?php else: ?>
+                    <a href="login.php" class="btn login">Login</a> 
+                    <a href="register.php" class="btn signup">Sign Up</a>
+                <?php endif; ?>
             </div>
         </div>
     </header>
@@ -51,6 +60,8 @@
             <button class="btn start-btn">Start met Quizzen</button> 
         </div>
     </main>
+
+    
     
 
     <footer class="footer">

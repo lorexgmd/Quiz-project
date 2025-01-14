@@ -14,13 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['password'])) {
             session_start();
+            
+            session_regenerate_id(true);
+
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
-            header("Location: index.php");
+            
+            $redirect = isset($_SESSION['redirect_url']) ? $_SESSION['redirect_url'] : 'index.php';
+            header("Location: $redirect");
             exit;
         } else {
-            echo "Ongeldige gebruikersnaam of wachtwoord!";
+            echo "Ongeldige inloggegevens!";
         }
     }
 }
@@ -44,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="username" id="username" placeholder="Voer je gebruikersnaam in" required>
 
         <br><label for="password">Wachtwoord:</label>
-        <input type="password" name="password" id="password" placeholder="Voer je password in" required>
+        <input type="password" name="password" id="password" placeholder="Voer je wachtwoord in" required>
 
         <br><button type="submit" class="btn-login">Login</button>
 
