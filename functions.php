@@ -7,7 +7,7 @@ function databaseConnect()
     $password = "z4v=y=rmN+wBtMSk+4ZiZBbF";
 
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=hersenhap", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=s42_tijnquiz", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Connected successfully";
     } catch (PDOException $e) {
