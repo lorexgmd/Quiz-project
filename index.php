@@ -7,35 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- header section start -->
     <header class="header">
         <div class="container">
             <h1 class="logo">QuizApp</h1>
-            <!-- Navigation start  -->
             <nav>
-                <ul class="nav-links"> <!-- Navigation links -->
+                <ul class="nav-links">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
                     <li><a href="#">Over Ons</a></li>
                 </ul>
             </nav>
-            <!-- Navigation end -->
             <div class="auth-buttons">
-                <a href="#" class="btn login">Login</a> <!-- login button  -->
-                <a href="#" class="btn signup">Sign Up</a> <!-- Sign Up button  -->
+                <a href="#" class="btn login">Login</a> 
+                <a href="#" class="btn signup">Sign Up</a> 
             </div>
         </div>
     </header>
-    <!-- header section end -->
 
-    <!-- main section start  -->
     <main class="main">
         <div class="container">
             <h2>Welkom bij de Quiz App</h2>
             <p>Test je kennis met onze uitdagende quizzen</p>
-            <div class="cards"> <!-- container for cards -->
-                <div class="card"> <!-- first card -->
+            <div class="cards"> 
+                <div class="card"> 
                     <h3>Populaire Quizzen</h3>
                     <p>Ontdek onze meest gespeelde quizzen en test jezelf!</p>
                     <ul>
@@ -44,7 +39,7 @@
                         <li>Geschiedenis</li>
                     </ul>
                 </div>
-                <div class="card"> <!-- second card -->
+                <div class="card"> 
                     <h3>Jouw Statistieken</h3>
                     <p>Bekijk je voortgang en prestaties</p>
                     <ul>
@@ -53,22 +48,20 @@
                     </ul>
                 </div>
             </div>
-            <button class="btn start-btn">Start met Quizzen</button> <!-- Start met Quizzen button -->
+            <button class="btn start-btn">Start met Quizzen</button> 
         </div>
     </main>
-    <!-- main section end  -->
     
 
-    <!-- footer section start  -->
     <footer class="footer">
-        <div class="container footer-content"> <!-- container for footer content-->
+        <div class="container footer-content"> 
             <div class="footer-section">
                 <h4>QuizApp</h4>
                 <p>Test je kennis en daag jezelf uit met onze quizzen.</p>
             </div>
             <div class="footer-section">
                 <h4>Links</h4>
-                <ul> <!-- links for navigation-->
+                <ul> 
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
@@ -85,6 +78,5 @@
             <p>© 2024 QuizApp. Alle rechten voorbehouden.</p>
         </div>
     </footer>
-    <!-- footer section end -->
 </body>
 </html>
