@@ -8,16 +8,21 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h3>Naam: <?php if (isset($_SESSION['user_id'])){
-        echo $_SESSION['username'];
-    
-    }
-    ?></h3>
+    <?php if (isset($_SESSION['user_id'])): ?>
+        <?php if ($_SESSION['role'] == 'teacher'): ?>
+            <a href="#">Maak quiz</a>
+        <?php elseif ($_SESSION['role'] == 'student'): ?>
+            <a href="#">Quiz</a>
+        <?php endif; ?>
+    <?php endif; ?>
 </body>
+
 </html>
