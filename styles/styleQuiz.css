@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --main-clr: red ;
+  --primary-bg-clr: #000;
+  --secondary-bg-clr: #fff;
+  --primary-text-clr: #fff;
+  --secondary-text-clr: #000;
+  --hover-button-clr: darkred;
+  --big-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1600 - 300)));
+  --medium-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  --small-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
+  --title-size: calc(16px + (35 - 16) * ((100vw - 300px) / (1600 - 300)));
+ }
+
+/* Main Section */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.quiz-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.quiz-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-item h3 {
+  margin: 0;
+}
+
+.quiz-item p {
+  margin: 5px 0;
+}
+
+.quiz-item .btn {
+  background-color: var(--main-clr);
+  color: var(--primary-text-clr);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.pagination .page {
+  border: 1px solid #ddd;
+  background-color: var(--primary-text-clr);
+  color: var(--primary-bg-clr);
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}

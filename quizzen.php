@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title> 
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/styleQuizzen.css">
+    <link rel="stylesheet" href="styles/styleQuiz.css">
 </head>
 <body>
 <header class="header">
@@ -26,39 +30,47 @@
         </div>
     </header>
 
-
-    <main class="main">
-        <div class="quiz-conteiner">
-        <label for="quizSearch"></label>
-        <input type="text" name="quizSearch" id="quizSearch" placeholder="Zoek een quiz..." required>
-        <button class="btn-search">Zoek</button>
-        <div class="quiz-section">
-            <button class="btn-start">Start</button>
-                <h1></h1>
-                <p></p>
+    <main>
+        <div class="search-bar">
+            <input type="text" placeholder="Zoek een quiz...">
+            <button class="btn">Zoeken</button>
         </div>
-        <div class="quiz-section">
-            <button class="btn-start">Start</button>
-            <h1></h1>
-            <p></p>
+        
+        <div class="quiz-list">
+            <div class="quiz-item">
+                <h3>Algemene Kennis Quiz</h3>
+                <p>20 vragen • Moeilijkheidsgraad: Gemiddeld</p>
+                <p>Test je kennis over verschillende onderwerpen</p>
+                <button class="btn start">Start</button>
+            </div>
+            <div class="quiz-item">
+                <h3>Sport Quiz</h3>
+                <p>15 vragen • Moeilijkheidsgraad: Makkelijk</p>
+                <p>Alles over verschillende sporten en atleten</p>
+                <button class="btn start">Start</button>
+            </div>
+            <div class="quiz-item">
+                <h3>Geschiedenis Quiz</h3>
+                <p>25 vragen • Moeilijkheidsgraad: Moeilijk</p>
+                <p>Ontdek je kennis over historische gebeurtenissen</p>
+                <button class="btn start">Start</button>
+            </div>
+            <div class="quiz-item">
+                <h3>Film & TV Quiz</h3>
+                <p>18 vragen • Moeilijkheidsgraad: Gemiddeld</p>
+                <p>Test je kennis over films en televisieseries</p>
+                <button class="btn start">Start</button>
+            </div>
         </div>
-
-        <div class="quiz-section">
-            <button class="btn-start">Start</button>
-            <h1></h1>
-            <p></p>
+        
+        <div class="pagination">
+            <button class="page">1</button>
+            <button class="page">2</button>
+            <button class="page">3</button>
+            <span>...</span>
+            <button class="page">10</button>
         </div>
-        <div class="quiz-section">
-            <button class="btn-start">Start</button>
-            <h1></h1>
-            <p></p>
-        </div>
-        </div>
-        <button class="btn-1">1</button>
-        <button class="btn-2">2</button>
-        <button class="btn-3">3</button>
     </main>
-
 
     <footer class="footer">
         <div class="container footer-content"> 
