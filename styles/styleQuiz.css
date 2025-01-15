@@ -90,3 +90,18 @@ a {
   margin: 0 5px;
   cursor: pointer;
 }
+
+.auth-buttons .btn {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: var(--primary-text-clr);
+  background-color: var(--main-clr);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+.auth-buttons .btn:hover {
+opacity: 0.9;
+}

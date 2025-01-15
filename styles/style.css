@@ -46,21 +46,6 @@ body {
     color: var(--primary-text-clr);
     text-decoration: none;
 }
-.auth-buttons .btn {
-    margin-left: 10px;
-    padding: 8px 15px;
-    color: var(--primary-text-clr);
-    text-decoration: none;
-    border-radius: 4px;
-}
-.auth-buttons .login {
-    background-color: var(--primary-bg-clr);
-    border: 1px solid #fff;
-}
-.auth-buttons .signup {
-    background-color: var(--main-clr);
-    border: 1px solid var(--main-clr);
-}
 
 /* Main */
 .main {
@@ -136,3 +121,18 @@ body {
     margin-top: 20px;
     font-size: var(--small-size);
 }
+
+.auth-buttons .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: var(--primary-text-clr);
+    background-color: var(--main-clr);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .auth-buttons .btn:hover {
+  opacity: 0.9;
+  }

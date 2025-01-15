@@ -2,19 +2,34 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--secondary-bg-clr);
+    color: var(--secondary-text-clr);
 }
+
+:root {
+    --main-clr: red ;
+    --primary-bg-clr: #000;
+    --secondary-bg-clr: #fff;
+    --third-bg-clr: #ccc;
+    --primary-text-clr: #fff;
+    --secondary-text-clr: #000;
+    --hover-button-clr: darkred;
+    --big-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1600 - 300)));
+    --medium-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    --small-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
+    --title-size: calc(16px + (35 - 16) * ((100vw - 300px) / (1600 - 300)));
+   }
+
 .containerr {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--secondary-bg-clr);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 h1 {
-    font-size: 24px;
+    font-size: var(--title-size);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -23,7 +38,7 @@ h1 {
     margin-left: 30px;
 }
 .section h2 {
-    font-size: 18px;
+    font-size: var(--medium-size);
     margin-bottom: 10px;
 }
 .form-group {
@@ -44,15 +59,15 @@ h1 {
     display: inline-block;
     padding: 10px 15px;
     font-size: 14px;
-    color: #fff;
-    background-color: #e63946;
+    color: var(--primary-text-clr);
+    background-color: var(--main-clr);
     border: none;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
 }
 .btn-black {
-    background-color: #000;
+    background-color: var(--primary-bg-clr);
 }
 .btn:hover {
     opacity: 0.9;
@@ -69,7 +84,7 @@ h1 {
     display: inline-block;
     width: 40px;
     height: 20px;
-    background: #ccc;
+    background: var(--third-bg-clr);
     border-radius: 20px;
     position: relative;
     cursor: pointer;
@@ -78,7 +93,7 @@ h1 {
     content: '';
     width: 16px;
     height: 16px;
-    background: #fff;
+    background: var(--secondary-bg-clr);
     border-radius: 50%;
     position: absolute;
     top: 2px;
@@ -86,7 +101,7 @@ h1 {
     transition: 0.3s;
 }
 .switch input:checked + label {
-    background: #e63946;
+    background: var(--main-clr);
 }
 .switch input:checked + label::after {
     left: 22px;
