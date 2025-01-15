@@ -1,14 +1,14 @@
 <?php
 session_start();
-
+ 
 if (!isset($_SESSION['user_id'])) {
     header('Location: index.php');
     exit;
 }
 ?>
-
+ 
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/profile.css">
 </head>
-
+ 
 <body>
     <header class="header">
         <div class="container">
@@ -28,7 +28,7 @@ if (!isset($_SESSION['user_id'])) {
                     <li><a href="#">Scores</a></li>
                 </ul>
             </nav>
-
+ 
             <div class="auth-buttons">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <a href="logout.php" class="btn logout">Uitloggen</a>
@@ -43,14 +43,14 @@ if (!isset($_SESSION['user_id'])) {
     <main>
         <div class="containerr">
             <h1>Mijn Profiel</h1>
-
+ 
             <div class="section">
                 <h2>Persoonlijke Informatie</h2>
                 <div class="form-group">
                     <label>Gebruikersnaam</label>
                     <input type="text" value="<?php if (isset($_SESSION['user_id'])) {
                         echo $_SESSION['username'];
-
+ 
                     }
                     ?>" disabled>
                 </div>
@@ -58,10 +58,10 @@ if (!isset($_SESSION['user_id'])) {
                     <label>Rol</label>
                     <input type="text" value="<?php echo $_SESSION['role']; ?>" disabled>
                 </div>
-
+ 
                 <button class="btn">Gegevens Bijwerken</button>
             </div>
-
+ 
             <div class="section">
                 <h2>Wachtwoord Wijzigen</h2>
                 <div class="form-group">
@@ -80,7 +80,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     </main>
-
+ 
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-section">
@@ -114,5 +114,5 @@ if (!isset($_SESSION['user_id'])) {
         <?php endif; ?>
     <?php endif; ?>
 </body>
-
+ 
 </html>
