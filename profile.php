@@ -110,7 +110,7 @@ if (!isset($_SESSION['user_id'])) {
         <?php if ($_SESSION['role'] == 'teacher'): ?>
             <a href="quiz.php">Maak quiz</a>
         <?php elseif ($_SESSION['role'] == 'student'): ?>
-            <a href="#>Quiz</a>
+            <a href="#">Quiz</a>
         <?php endif; ?>
     <?php endif; ?>
 </body>
