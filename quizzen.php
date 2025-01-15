@@ -1,15 +1,13 @@
 <?php
 session_start();
-require 'config.php'; // Zorg ervoor dat je verbinding hebt met de database
+require 'config.php';
 
-// Haal de quizzen uit de database
 function getQuizzes() {
     global $pdo;
     $stmt = $pdo->query("SELECT * FROM Quiz");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Haal de quizzen op
 $quizzes = getQuizzes();
 ?>
 
