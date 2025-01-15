@@ -30,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="styles/styleRegister.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
 
 <header class="header">
@@ -49,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <li><a href="index.php">Home</a></li>
                     <li><a href="#">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
-                    <li><a href="#">Over Ons</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">

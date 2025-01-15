@@ -23,7 +23,6 @@ session_start()
                     <li><a href="index.php">Home</a></li>
                     <li><a href="#">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
-                    <li><a href="#">Over Ons</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
