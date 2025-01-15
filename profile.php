@@ -18,7 +18,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-<header class="header">
+    <header class="header">
         <div class="container">
             <h1 class="logo">QuizApp</h1>
             <nav>
@@ -30,65 +30,66 @@ if (!isset($_SESSION['user_id'])) {
             </nav>
 
             <div class="auth-buttons">
-            <?php if (isset($_SESSION['user_id'])): ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
                     <a href="logout.php" class="btn logout">Uitloggen</a>
                     <a href="profile.php" class="btn profile">Profiel</a>
                 <?php else: ?>
-                <a href="login.php" class="btn login">Login</a> 
-                <a href="register.php" class="btn signup">Sign Up</a> 
+                    <a href="login.php" class="btn login">Login</a>
+                    <a href="register.php" class="btn signup">Sign Up</a>
                 <?php endif; ?>
             </div>
         </div>
     </header>
     <main>
-<div class="containerr">
-        <h1>Mijn Profiel</h1>
+        <div class="containerr">
+            <h1>Mijn Profiel</h1>
 
-        <div class="section">
-            <h2>Persoonlijke Informatie</h2>
-            <div class="form-group">
-                <label>Gebruikersnaam</label>
-                <input type="text" value="<?php if (isset($_SESSION['user_id'])){
-        echo $_SESSION['username'];
-    
-    }
-    ?>" disabled>
+            <div class="section">
+                <h2>Persoonlijke Informatie</h2>
+                <div class="form-group">
+                    <label>Gebruikersnaam</label>
+                    <input type="text" value="<?php if (isset($_SESSION['user_id'])) {
+                        echo $_SESSION['username'];
+
+                    }
+                    ?>" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Rol</label>
+                    <input type="text" value="<?php echo $_SESSION['role']; ?>" disabled>
+                </div>
+
+                <button class="btn">Gegevens Bijwerken</button>
             </div>
-            <div class="form-group">
-                <label>Rol</label>
-                <input type="text" value="Gebruiker" disabled>
+
+            <div class="section">
+                <h2>Wachtwoord Wijzigen</h2>
+                <div class="form-group">
+                    <label>Huidig Wachtwoord</label>
+                    <input type="password">
+                </div>
+                <div class="form-group">
+                    <label>Nieuw Wachtwoord</label>
+                    <input type="password">
+                </div>
+                <div class="form-group">
+                    <label>Bevestig Nieuw Wachtwoord</label>
+                    <input type="password">
+                </div>
+                <button class="btn btn-black">Wachtwoord Wijzigen</button>
             </div>
-            <button class="btn">Gegevens Bijwerken</button>
         </div>
+    </main>
 
-        <div class="section">
-            <h2>Wachtwoord Wijzigen</h2>
-            <div class="form-group">
-                <label>Huidig Wachtwoord</label>
-                <input type="password">
-            </div>
-            <div class="form-group">
-                <label>Nieuw Wachtwoord</label>
-                <input type="password">
-            </div>
-            <div class="form-group">
-                <label>Bevestig Nieuw Wachtwoord</label>
-                <input type="password">
-            </div>
-            <button class="btn btn-black">Wachtwoord Wijzigen</button>
-        </div>
-    </div>
-                </main>
-
-                <footer class="footer">
-        <div class="container footer-content"> 
+    <footer class="footer">
+        <div class="container footer-content">
             <div class="footer-section">
                 <h4>QuizApp</h4>
                 <p>Test je kennis en daag jezelf uit met onze quizzen.</p>
             </div>
             <div class="footer-section">
                 <h4>Links</h4>
-                <ul> 
+                <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
