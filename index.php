@@ -13,7 +13,7 @@ session_start();
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo">QuizApp</h1>
+            <h1 class="logo">HersenHap</h1>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
@@ -67,7 +67,7 @@ session_start();
                     </ul>
                 </div>
             </div>
-            <button class="btn start-btn">Start met Quizzen</button> 
+            <button class="btn start-btn" onclick="startQuiz()">Start met Quizzen</button> 
         </div>
     </main>
 
@@ -77,7 +77,7 @@ session_start();
     <footer class="footer">
         <div class="container footer-content"> 
             <div class="footer-section">
-                <h4>QuizApp</h4>
+                <h4>HersenHap</h4>
                 <p>Test je kennis en daag jezelf uit met onze quizzen.</p>
             </div>
             <div class="footer-section">
@@ -91,13 +91,18 @@ session_start();
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p>Email: info@quizapp.nl</p>
+                <p>Email: info@hersenhap.nl</p>
                 <p>Tel: 020-1234567</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 QuizApp. Alle rechten voorbehouden.</p>
+            <p>© 2024 HersenHap. Alle rechten voorbehouden.</p>
         </div>
     </footer>
+    <script>
+        function startQuiz() {
+            window.location.href = "quizzen.php";
+        }
+    </script>
 </body>
 </html>  
