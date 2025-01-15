@@ -1,3 +1,8 @@
+<?php
+session_start()
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +25,13 @@
                 </ul>
             </nav>
             <div class="auth-buttons">
+            <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="logout.php" class="btn logout">Uitloggen</a>
+                    <a href="profile.php" class="btn profile">Profiel</a>
+                <?php else: ?>
                 <a href="login.php" class="btn login">Login</a> 
                 <a href="register.php" class="btn signup">Sign Up</a> 
+                <?php endif; ?>
             </div>
         </div>
     </header>
