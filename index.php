@@ -67,7 +67,7 @@ session_start();
                     </ul>
                 </div>
             </div>
-            <button class="btn start-btn">Start met Quizzen</button> 
+            <button class="btn start-btn" onclick="startQuiz()">Start met Quizzen</button> 
         </div>
     </main>
 
@@ -99,5 +99,10 @@ session_start();
             <p>© 2024 QuizApp. Alle rechten voorbehouden.</p>
         </div>
     </footer>
+    <script>
+        function startQuiz() {
+            window.location.href = "quizzen.php";
+        }
+    </script>
 </body>
 </html>  
