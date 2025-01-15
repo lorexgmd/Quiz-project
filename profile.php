@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/profile.css">
 </head>
+
 <body>
 <header class="header">
         <div class="container">
@@ -103,5 +105,13 @@ if (!isset($_SESSION['user_id'])) {
             <p>© 2024 QuizApp. Alle rechten voorbehouden.</p>
         </div>
     </footer>
+    <?php if (isset($_SESSION['user_id'])): ?>
+        <?php if ($_SESSION['role'] == 'teacher'): ?>
+            <a href="#">Maak quiz</a>
+        <?php elseif ($_SESSION['role'] == 'student'): ?>
+            <a href="#">Quiz</a>
+        <?php endif; ?>
+    <?php endif; ?>
 </body>
+
 </html>
