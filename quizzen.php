@@ -43,7 +43,7 @@ $quizzes = getQuizzes();
     </div>
 </header>
 
-<main>
+<main class="main">
     <div class="search-bar">
         <input type="text" placeholder="Zoek een quiz...">
         <button class="btn">Zoeken</button>

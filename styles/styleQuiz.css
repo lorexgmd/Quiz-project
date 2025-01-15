@@ -25,6 +25,9 @@ a {
  }
 
 /* Main Section */
+.main{
+height: 60vh;
+}
 .search-bar {
   display: flex;
   justify-content: center;
