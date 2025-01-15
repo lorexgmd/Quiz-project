@@ -51,7 +51,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speel Quiz - <?php echo htmlspecialchars($quizInfo['quiz_name']); ?></title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/styleQuiz.css">
+    <link rel="stylesheet" href="styles/stylePlayQuiz.css">
 </head>
 <body>
 <header class="header">
@@ -76,7 +76,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
     </div>
 </header>
 
-<main>
+<main class="main">
     <h1><?php echo htmlspecialchars($quizInfo['quiz_name']); ?></h1>
     <p>Test je kennis over verschillende onderwerpen!</p>
 

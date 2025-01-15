@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--secondary-text-clr);
+}
+
+:root {
+    --main-clr: red ;
+    --primary-bg-clr: #000;
+    --secondary-bg-clr: #fff;
+    --primary-text-clr: #fff;
+    --secondary-text-clr: #000;
+    --third-bg-clr: #ccc;
+    --hover-button-clr: darkred;
+    --big-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1600 - 300)));
+    --medium-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    --small-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
+    --title-size: calc(16px + (35 - 16) * ((100vw - 300px) / (1600 - 300)));
+   }
+
+
+.maain {
+    background-color: var(--secondary-bg-clr);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px 30px;
+    height: 80vh;
+    text-align: center;
+}
+
+.maain h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--secondary-text-clr);
+}
+
+.maain p {
+    font-size: 1.1em;
+    color: var(--secondary-text-clr);
+    margin-bottom: 20px;
+}
+
+.maain h3 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: var(--secondary-text-clr);
+    text-align: left;
+}
+
+.maain ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.maain ul li {
+    background-color: var(--secondary-bg-clr);
+    border: 1px solid var(--third-bg-clr);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.maain ul li strong {
+    color: var(--secondary-text-clr);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--main-clr);
+    color: var(--primary-text-clr);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #b71c1c;
+    text-decoration: none;
+}

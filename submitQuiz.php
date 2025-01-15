@@ -46,7 +46,7 @@ foreach ($correctAnswers as $correctAnswer) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultaten - <?php echo htmlspecialchars($quizInfo['quiz_name']); ?></title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/styleQuiz.css">
+    <link rel="stylesheet" href="styles/styleSubmitQuiz.css">
 </head>
 <body>
 <header class="header">
@@ -71,7 +71,7 @@ foreach ($correctAnswers as $correctAnswer) {
     </div>
 </header>
 
-<main>
+<main class="maain">
     <h1>Resultaten van de Quiz: <?php echo htmlspecialchars($quizInfo['quiz_name']); ?></h1>
     <p>Je hebt <strong><?php echo $score; ?></strong> van de <strong><?php echo count($correctAnswers); ?></strong> vragen goed beantwoord.</p>
 
@@ -80,7 +80,7 @@ foreach ($correctAnswers as $correctAnswer) {
         <?php foreach ($correctAnswers as $correctAnswer): ?>
             <li>
                 Vraag: <?php echo htmlspecialchars($correctAnswer['question_text']); ?> 
-                - Jouw antwoord: 
+                <br> Jouw antwoord: 
                 <?php 
                     $user_answer = isset($_POST['question_' . $correctAnswer['question_id']]) ? $_POST['question_' . $correctAnswer['question_id']] : 'Geen antwoord';
                     
@@ -92,7 +92,7 @@ foreach ($correctAnswers as $correctAnswer) {
                     }
                     echo htmlspecialchars($user_answer_text);
                 ?>
-                - Correct antwoord: <?php echo htmlspecialchars($correctAnswer['option_text']); ?>
+                <br> Correct antwoord: <?php echo htmlspecialchars($correctAnswer['option_text']); ?>
             </li>
         <?php endforeach; ?>
     </ul>
