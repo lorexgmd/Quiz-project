@@ -1,7 +1,10 @@
-body {
+html, body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: var(--secondary-text-clr);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 :root {
@@ -20,12 +23,13 @@ body {
 
 
 .maain {
+    flex: 1;
     background-color: var(--secondary-bg-clr);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px 30px;
-    height: 80vh;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .maain h1 {

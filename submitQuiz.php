@@ -79,8 +79,8 @@ foreach ($correctAnswers as $correctAnswer) {
     <ul>
         <?php foreach ($correctAnswers as $correctAnswer): ?>
             <li>
-                Vraag: <?php echo htmlspecialchars($correctAnswer['question_text']); ?> 
-                <br> Jouw antwoord: 
+            <strong> Vraag: </strong><?php echo htmlspecialchars($correctAnswer['question_text']); ?> 
+                <br> <strong> Jouw antwoord: </strong>
                 <?php 
                     $user_answer = isset($_POST['question_' . $correctAnswer['question_id']]) ? $_POST['question_' . $correctAnswer['question_id']] : 'Geen antwoord';
                     
@@ -92,7 +92,7 @@ foreach ($correctAnswers as $correctAnswer) {
                     }
                     echo htmlspecialchars($user_answer_text);
                 ?>
-                <br> Correct antwoord: <?php echo htmlspecialchars($correctAnswer['option_text']); ?>
+                <br> <strong> Correct antwoord: </strong> <?php echo htmlspecialchars($correctAnswer['option_text']); ?>
             </li>
         <?php endforeach; ?>
     </ul>

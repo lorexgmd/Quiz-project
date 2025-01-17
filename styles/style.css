@@ -1,9 +1,12 @@
 /* General styles */
-body {
+html, body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: var(--secondary-text-clr);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 :root {
@@ -49,9 +52,11 @@ body {
 
 /* Main */
 .main {
+    flex: 1;
     text-align: center;
     padding: 50px 20px;
     background-color: var(--secondary-bg-clr);
+    box-sizing: border-box;
 }
 .main h2 {
     font-size: var(--medium-size);

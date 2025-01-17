@@ -1,9 +1,12 @@
-body {
+html, body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--secondary-bg-clr);
     color: var(--secondary-text-clr);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 :root {
@@ -19,7 +22,10 @@ body {
     --small-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
     --title-size: calc(16px + (35 - 16) * ((100vw - 300px) / (1600 - 300)));
    }
-
+.main {
+    flex: 1;
+    box-sizing: border-box;
+}
 .containerr {
     max-width: 800px;
     margin: 0 auto;
