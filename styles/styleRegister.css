@@ -19,7 +19,8 @@ html, body {
     --medium-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
     --small-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
     --title-size: calc(16px + (35 - 16) * ((100vw - 300px) / (1600 - 300)));
-   }
+}
+
 .main {
     flex: 1;
     display: flex;
