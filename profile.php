@@ -40,7 +40,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     </header>
-    <main>
+    <main class="main">
         <div class="containerr">
             <h1>Mijn Profiel</h1>
  
@@ -63,20 +63,20 @@ if (!isset($_SESSION['user_id'])) {
             </div>
  
             <div class="section">
-                <h2>Wachtwoord Wijzigen</h2>
+                <h2>Wachtwoord wijzigen</h2>
                 <div class="form-group">
-                    <label>Huidig Wachtwoord</label>
+                    <label>Huidig wachtwoord</label>
                     <input type="password">
                 </div>
                 <div class="form-group">
-                    <label>Nieuw Wachtwoord</label>
+                    <label>Nieuw wachtwoord</label>
                     <input type="password">
                 </div>
                 <div class="form-group">
-                    <label>Bevestig Nieuw Wachtwoord</label>
+                    <label>Bevestig nieuw wachtwoord</label>
                     <input type="password">
                 </div>
-                <button class="btn btn-black">Wachtwoord Wijzigen</button>
+                <button class="btn btn-black">Wachtwoord wijzigen</button>
             </div>
         </div>
     </main>
