@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->beginTransaction();
 
         $stmt = $pdo->prepare("INSERT INTO Quiz (quiz_name, created_by) VALUES (?, ?)");
-        $stmt->execute([$quiz->getName(), $quiz->getCreator()]);
+        $stmt->execute([$quiz->getName(), $_SESSION['user_id']]);
         $quizId = $pdo->lastInsertId();
 
         foreach ($quiz->getQuestions() as $index => $questionText) {
