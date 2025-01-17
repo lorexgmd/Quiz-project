@@ -110,6 +110,7 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
+    <main class="main">
     <h1>Quiz bewerken</h1>
     <form action="" method="post">
         <label for="quiz_name">Quiznaam:</label>
@@ -164,6 +165,7 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </form>
 
     <a href="teacher.php">Terug</a>
+    </main>
 </body>
 
 </html>

@@ -1,0 +1,93 @@
+html, body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--secondary-text-clr);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+:root {
+    --main-clr: red ;
+    --primary-bg-clr: #000;
+    --secondary-bg-clr: #fff;
+    --primary-text-clr: #fff;
+    --secondary-text-clr: #000;
+    --third-bg-clr: #ccc;
+    --hover-button-clr: darkred;
+    --big-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1600 - 300)));
+    --medium-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    --small-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
+    --title-size: calc(16px + (35 - 16) * ((100vw - 300px) / (1600 - 300)));
+   }
+
+.main {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.main a {
+    text-decoration: none;
+    color: var(--main-clr);
+    font-weight: bold;
+}
+
+.main .card {
+    background: var(--secondary-bg-clr);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 2;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--main-clr);
+    color: var(--primary-text-clr);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.bton {
+    display: inline-block;
+    background-color: var(--secondary-bg-clr);
+    color: var(--main-clr);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.ppp{
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 20px; 
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
