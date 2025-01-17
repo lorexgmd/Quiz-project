@@ -1,8 +1,11 @@
 /* General styles */
-body {
+html, body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: var(--secondary-text-clr);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 :root {
@@ -19,11 +22,12 @@ body {
     --title-size: calc(16px + (35 - 16) * ((100vw - 300px) / (1600 - 300)));
    }
 .main {
+    flex: 1;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 80vh;
     background-color: var(--secondary-bg-clr);
     margin: 0;
+    box-sizing: border-box;
 }
 
 h1 {
