@@ -73,7 +73,7 @@ $quizzes = getUserQuizzes($user_id);
         <p>Je hebt nog geen quizzen gemaakt.</p>
     <?php endif; ?>
     </div>
-    <button class="btn" href="quiz.php">Nieuwe quiz maken</button>
+    <button class="btn" onclick="gotoQuiz()">Nieuwe quiz maken</button>
     </div>
     </main>
 
@@ -102,5 +102,11 @@ $quizzes = getUserQuizzes($user_id);
             <p>© 2024 HersenHap. Alle rechten voorbehouden.</p>
         </div>
     </footer>
+
+    <script>
+        function gotoQuiz() {
+            window.location.href = 'quiz.php';
+        }
+    </script>
 </body>
 </html>

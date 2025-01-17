@@ -109,9 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <?php if ($_SESSION['role'] == 'teacher'): ?>
-                    <a href="quiz.php">Maak quiz</a>
-                <?php elseif ($_SESSION['role'] == 'student'): ?>
-                    <a href="#">Quiz</a>
+                    <a href="teacher.php" class="teacherLink">Beheer quiz</a>
                 <?php endif; ?>
             <?php endif; ?>
 

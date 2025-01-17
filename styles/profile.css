@@ -112,3 +112,17 @@ h1 {
 .switch input:checked + label::after {
     left: 22px;
 }
+
+.teacherLink {
+    display: inline-block;
+    width: 100px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: var(--primary-text-clr);
+    background-color: var(--main-clr);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}

@@ -1,10 +1,8 @@
 <?php
 session_start();
 
-// Connect de database in deze file
 require 'config.php';
 
-// Checkt of iemand is ingelogd
 if (!isset($_SESSION['user_id'])) {
     die("Je moet ingelogd zijn om een quiz te bewerken.");
 }
@@ -16,7 +14,6 @@ if (!$quiz_id) {
     die("Geen quiz geselecteerd.");
 }
 
-// Zoekt in de database naar alle info omtrent de quiz_id
 $stmt = $pdo->prepare("SELECT * FROM Quiz WHERE quiz_id = :quiz_id AND created_by = :user_id");
 $stmt->execute(['quiz_id' => $quiz_id, 'user_id' => $user_id]);
 $quiz = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -100,6 +97,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_option'])) {
     exit;
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_correct'])) {
+    $option_id = $_POST['option_id'];
+    $is_correct = $_POST['is_correct'] == 1 ? 0 : 1;
+
+    $stmt = $pdo->prepare("UPDATE Options SET is_correct = :is_correct WHERE option_id = :option_id");
+    $stmt->execute(['is_correct' => $is_correct, 'option_id' => $option_id]);
+
+    header("Location: editQuiz.php?quiz_id=$quiz_id");
+    exit;
+}
+
 $stmt = $pdo->prepare("SELECT * FROM Questions WHERE quiz_id = :quiz_id");
 $stmt->execute(['quiz_id' => $quiz_id]);
 $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -140,7 +148,6 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </header>
 
-
     <main class="main">
         <h1>Quiz bewerken</h1>
         <form action="" method="post">
@@ -170,11 +177,16 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $options = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ?>
             <?php foreach ($options as $option): ?>
-                <form action="" method="post">
+                <form action="" method="post" style="display: flex; align-items: center;">
                     <input type="hidden" name="option_id" value="<?= $option['option_id'] ?>">
+                    <input type="hidden" name="is_correct" value="<?= $option['is_correct'] ?>">
                     <input type="text" name="option_text" value="<?= htmlspecialchars($option['option_text']) ?>" required>
                     <button type="submit" name="update_option">Bewerken</button>
                     <button type="submit" name="delete_option">Verwijderen</button>
+                    <button type="submit" name="toggle_correct"
+                        style="background-color: <?= $option['is_correct'] ? 'green' : 'red' ?>; color: white; border: none; padding: 5px 10px; margin-left: 10px;">
+                        <?= $option['is_correct'] ? 'Goed' : 'Fout' ?>
+                    </button>
                 </form>
             <?php endforeach; ?>
 
@@ -188,7 +200,6 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $index++;
         endforeach;
         ?>
-
 
         <h2>Nieuwe vraag toevoegen</h2>
         <form action="" method="post">

@@ -103,3 +103,14 @@ html, body {
 .main a:hover {
     background-color: #444;
 }
+
+button[name="toggle_correct"] {
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button[name="toggle_correct"]:hover {
+    opacity: 0.9;
+}
