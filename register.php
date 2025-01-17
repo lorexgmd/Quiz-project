@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,9 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="styles/styleRegister.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
 
-<header class="header">
+    <header class="header">
         <div class="container">
             <h1 class="logo">QuizApp</h1>
             <nav>
@@ -50,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="login.php" class="btn login">Login</a> 
-                <a href="register.php" class="btn signup">Sign Up</a> 
+                <a href="login.php" class="btn login">Login</a>
+                <a href="register.php" class="btn signup">Sign Up</a>
             </div>
         </div>
     </header>
@@ -60,47 +62,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <main class="main">
-    <div class="form-container">
-        <h1>Registreren</h1>
-        <p>Maak een nieuw account aan</p>
+        <div class="form-container">
+            <h1>Registreren</h1>
+            <p>Maak een nieuw account aan</p>
 
-        <form action="register.php" method="POST">
+            <form action="register.php" method="POST">
 
-            <label for="username">Gebruikersnaam:</label>
-            <input type="text" name="username" id="username" placeholder="Voer je gebruikersnaam in" required>
+                <label for="username">Gebruikersnaam:</label>
+                <input type="text" name="username" id="username" placeholder="Voer je gebruikersnaam in" required>
 
-            <br><label for="password">Wachtwoord:</label>
-            <input type="password" name="password" id="password" placeholder="Voer je wachtwoord in" required>
+                <br><label for="password">Wachtwoord:</label>
+                <input type="password" name="password" id="password" placeholder="Voer je wachtwoord in" required>
 
-            <p class="Select">Selecteer je rol </p>
-            <div class="role-selection">
-                <label>
-                    <input type="radio" name="role" value="teacher" required> Leraar
-                </label>
-                <label>
-                    <input type="radio" name="role" value="student" required> Leerling
-                </label>
-            </div>
+                <p class="Select">Selecteer je rol </p>
+                <div class="role-selection">
+                    <label>
+                        <input type="radio" name="role" value="teacher" required> Leraar
+                    </label>
+                    <label>
+                        <input type="radio" name="role" value="student" required> Leerling
+                    </label>
+                </div>
 
-            <br><button type="submit" class="btn-register">Registreren</button>
+                <br><button type="submit" class="btn-register">Registreren</button>
 
-        <p class="login-link">
-        Heb je al een account? <a href="login.php">Inloggen</a>
-      </p>
-    </form>     
-</div>
-</main>
+                <p class="login-link">
+                    Heb je al een account? <a href="login.php">Inloggen</a>
+                </p>
+            </form>
+        </div>
+    </main>
 
 
-<footer class="footer">
-        <div class="container footer-content"> 
+    <footer class="footer">
+        <div class="container footer-content">
             <div class="footer-section">
                 <h4>QuizApp</h4>
                 <p>Test je kennis en daag jezelf uit met onze quizzen.</p>
             </div>
             <div class="footer-section">
                 <h4>Links</h4>
-                <ul> 
+                <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
@@ -119,10 +121,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </footer>
 
 
-            <p class="login-link">
-                Heb je al een account? <a href="login.php">Inloggen</a>
-            </p>
-        </form>
+    <p class="login-link">
+        Heb je al een account? <a href="login.php">Inloggen</a>
+    </p>
+    </form>
     </div>
 </body>
 

@@ -117,90 +117,97 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-<header class="header">
+    <header class="header">
         <div class="container">
-            <h1 class="logo">QuizApp</h1>
+            <h1 class="logo">HersenHap</h1>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="quizzen.php">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
                 </ul>
             </nav>
+
             <div class="auth-buttons">
-                <a href="login.php" class="btn login">Login</a> 
-                <a href="register.php" class="btn signup">Sign Up</a> 
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="logout.php" class="btn logout">Uitloggen</a>
+                    <a href="profile.php" class="btn profile">Profiel</a>
+                <?php else: ?>
+                    <a href="login.php" class="btn login">Login</a>
+                    <a href="register.php" class="btn signup">Sign Up</a>
+                <?php endif; ?>
             </div>
         </div>
     </header>
 
 
     <main class="main">
-    <h1>Quiz bewerken</h1>
-    <form action="" method="post">
-        <label for="quiz_name">Quiznaam:</label>
-        <input type="text" name="quiz_name" id="quiz_name" value="<?php echo htmlspecialchars($quiz['quiz_name']); ?>"
-            required>
-        <button type="submit" name="update_quiz">Opslaan</button>
-    </form>
-
-    <h2>Vragen</h2>
-    <?php
-    $index = 1;
-    foreach ($questions as $question): ?>
-        <h3>Vraag <?= $index ?></h3>
+        <h1>Quiz bewerken</h1>
         <form action="" method="post">
-            <input type="hidden" name="question_id" value="<?= $question['question_id'] ?>">
-            <input type="text" name="question_text" value="<?= htmlspecialchars($question['question_text']) ?>" required>
-            <button type="submit" name="update_question">Bewerken</button>
-            <button type="submit" name="delete_question">Verwijderen</button>
+            <label for="quiz_name">Quiznaam:</label>
+            <input type="text" name="quiz_name" id="quiz_name"
+                value="<?php echo htmlspecialchars($quiz['quiz_name']); ?>" required>
+            <button type="submit" name="update_quiz">Opslaan</button>
         </form>
 
-        <h4>Opties</h4>
+        <h2>Vragen</h2>
         <?php
-        $stmt = $pdo->prepare("SELECT * FROM Options WHERE question_id = :question_id");
-        $stmt->execute(['question_id' => $question['question_id']]);
-        $options = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        ?>
-        <?php foreach ($options as $option): ?>
+        $index = 1;
+        foreach ($questions as $question): ?>
+            <h3>Vraag <?= $index ?></h3>
             <form action="" method="post">
-                <input type="hidden" name="option_id" value="<?= $option['option_id'] ?>">
-                <input type="text" name="option_text" value="<?= htmlspecialchars($option['option_text']) ?>" required>
-                <button type="submit" name="update_option">Bewerken</button>
-                <button type="submit" name="delete_option">Verwijderen</button>
+                <input type="hidden" name="question_id" value="<?= $question['question_id'] ?>">
+                <input type="text" name="question_text" value="<?= htmlspecialchars($question['question_text']) ?>"
+                    required>
+                <button type="submit" name="update_question">Bewerken</button>
+                <button type="submit" name="delete_question">Verwijderen</button>
             </form>
-        <?php endforeach; ?>
 
+            <h4>Opties</h4>
+            <?php
+            $stmt = $pdo->prepare("SELECT * FROM Options WHERE question_id = :question_id");
+            $stmt->execute(['question_id' => $question['question_id']]);
+            $options = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            ?>
+            <?php foreach ($options as $option): ?>
+                <form action="" method="post">
+                    <input type="hidden" name="option_id" value="<?= $option['option_id'] ?>">
+                    <input type="text" name="option_text" value="<?= htmlspecialchars($option['option_text']) ?>" required>
+                    <button type="submit" name="update_option">Bewerken</button>
+                    <button type="submit" name="delete_option">Verwijderen</button>
+                </form>
+            <?php endforeach; ?>
+
+            <form action="" method="post">
+                <input type="hidden" name="question_id" value="<?= $question['question_id'] ?>">
+                <input type="text" name="option_text" placeholder="Nieuwe optie" required>
+                <button type="submit" name="add_option">Toevoegen</button>
+            </form>
+            <hr>
+            <?php
+            $index++;
+        endforeach;
+        ?>
+
+
+        <h2>Nieuwe vraag toevoegen</h2>
         <form action="" method="post">
-            <input type="hidden" name="question_id" value="<?= $question['question_id'] ?>">
-            <input type="text" name="option_text" placeholder="Nieuwe optie" required>
-            <button type="submit" name="add_option">Toevoegen</button>
+            <input type="text" name="question_text" placeholder="Nieuwe vraag" required>
+            <button type="submit" name="add_question">Toevoegen</button>
         </form>
-        <hr> 
-        <?php
-        $index++; 
-    endforeach;
-    ?>
 
-
-    <h2>Nieuwe vraag toevoegen</h2>
-    <form action="" method="post">
-        <input type="text" name="question_text" placeholder="Nieuwe vraag" required>
-        <button type="submit" name="add_question">Toevoegen</button>
-    </form>
-
-    <a href="teacher.php">Terug</a>
+        <a href="teacher.php">Terug</a>
     </main>
 
     <footer class="footer">
-        <div class="container footer-content"> 
+        <div class="container footer-content">
             <div class="footer-section">
                 <h4>HersenHap</h4>
                 <p>Test je kennis en daag jezelf uit met onze quizzen.</p>
             </div>
             <div class="footer-section">
                 <h4>Links</h4>
-                <ul> 
+                <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
