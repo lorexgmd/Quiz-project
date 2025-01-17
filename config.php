@@ -1,4 +1,6 @@
 <?php
+// Database connectie
+
 $host = '82.165.51.200';
 $dbname = 's42_tijnquiz';
 $username = 'u42_ZFmn4UQD3o';

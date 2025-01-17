@@ -1,7 +1,10 @@
 <?php
 session_start();
+
+// Connect de database in deze file
 require 'config.php';
 
+// Checkt of iemand is ingelogd
 if (!isset($_SESSION['user_id'])) {
     die("Je moet ingelogd zijn om een quiz te bewerken.");
 }
@@ -13,6 +16,7 @@ if (!$quiz_id) {
     die("Geen quiz geselecteerd.");
 }
 
+// Zoekt in de database naar alle info omtrent de quiz_id
 $stmt = $pdo->prepare("SELECT * FROM Quiz WHERE quiz_id = :quiz_id AND created_by = :user_id");
 $stmt->execute(['quiz_id' => $quiz_id, 'user_id' => $user_id]);
 $quiz = $stmt->fetch(PDO::FETCH_ASSOC);

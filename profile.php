@@ -1,12 +1,16 @@
 <?php
 session_start();
+
+// Connect de database in deze file 
 require 'config.php';
 
+// Als client niet is ingelogd dan stuur hij je naar index.php
 if (!isset($_SESSION['user_id'])) {
     header('Location: index.php');
     exit;
 }
 
+// Veranderen van wachtwoorden in database met ingevulde gegevens van de form
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $currentPassword = $_POST['current_password'];
     $newPassword = $_POST['new_password'];

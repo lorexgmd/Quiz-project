@@ -1,13 +1,17 @@
 <?php
 session_start();
+
+// Connect de database in deze file
 require 'config.php';
 
+// Checkt of je bent ingelogd
 if (!isset($_SESSION['user_id'])) {
     die("Je moet ingelogd zijn om een quiz te verwijderen.");
 }
 
 $user_id = $_SESSION['user_id'];
 
+// verwijderd de quiz die is aangegeven in de post
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $quiz_id = $_POST['quiz_id'];
 
