@@ -115,7 +115,6 @@ h1 {
 
 .teacherLink {
     display: inline-block;
-    width: 100px;
     padding: 10px 15px;
     font-size: 14px;
     color: var(--primary-text-clr);
@@ -124,5 +123,4 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
-    text-decoration: none;
 }
