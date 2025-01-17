@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $currentPassword = $_POST['current_password'];
     $newPassword = $_POST['new_password'];
     $confirmPassword = $_POST['confirm_password'];
@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $stmt->execute(['user_id' => $user_id]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user && password_verify($currentPassword, $user['password'])){
-        if ($newPassword == $confirmPassword){
+    if ($user && password_verify($currentPassword, $user['password'])) {
+        if ($newPassword == $confirmPassword) {
             $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
             $stmt = $pdo->prepare("UPDATE users SET password = :password WHERE id = :user_id");
             $stmt->execute(['password' => $hashedPassword, 'user_id' => $user_id]);
@@ -103,8 +103,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <button type="submit" class="btn btn-black">Wachtwoord wijzigen</button>
                 </div>
             </form>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <?php if ($_SESSION['role'] == 'teacher'): ?>
+                    <a href="quiz.php">Maak quiz</a>
+                <?php elseif ($_SESSION['role'] == 'student'): ?>
+                    <a href="#">Quiz</a>
+                <?php endif; ?>
+            <?php endif; ?>
 
         </div>
+
+
     </main>
 
     <footer class="footer">
@@ -132,13 +141,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <p>© 2024 QuizApp. Alle rechten voorbehouden.</p>
         </div>
     </footer>
-    <?php if (isset($_SESSION['user_id'])): ?>
-        <?php if ($_SESSION['role'] == 'teacher'): ?>
-            <a href="quiz.php">Maak quiz</a>
-        <?php elseif ($_SESSION['role'] == 'student'): ?>
-            <a href="#">Quiz</a>
-        <?php endif; ?>
-    <?php endif; ?>
 </body>
 
 </html>
