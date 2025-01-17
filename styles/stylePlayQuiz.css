@@ -23,6 +23,9 @@ html, body {
    }
 .main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: var(--secondary-bg-clr);
@@ -30,13 +33,13 @@ html, body {
     box-sizing: border-box;
 }
 
-h1 {
+.main h1 {
     text-align: left;
     font-size: var(--title-size);
     margin-bottom: 10px;
 }
 
-p {
+.main p {
     text-align: left;
     font-size: var(--medium-size);
     margin-bottom: 10px;
