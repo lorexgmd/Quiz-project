@@ -1,0 +1,105 @@
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-bg-clr);
+    color: var(--secondary-text-clr);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+:root {
+    --main-clr: red ;
+    --primary-bg-clr: #000;
+    --secondary-bg-clr: #fff;
+    --third-bg-clr: #ccc;
+    --primary-text-clr: #fff;
+    --secondary-text-clr: #000;
+    --hover-button-clr: darkred;
+    --big-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1600 - 300)));
+    --medium-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    --small-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
+    --title-size: calc(16px + (35 - 16) * ((100vw - 300px) / (1600 - 300)));
+   }
+
+.main {
+    box-sizing: border-box;
+    flex: 1;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--secondary-bg-clr);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main h1, h2, h3, h4 {
+    margin-bottom: 10px;
+    color: var(--secondary-text-clr);
+}
+
+.main label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.main input[type="text"] {
+    width: calc(100% - 100px);
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    border: 1px solid var(--third-bg-clr);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.main button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.main button[type="submit"] {
+    background-color: var(--primary-bg-clr);
+    color: var(--primary-text-clr);
+}
+
+.main button[name="delete_question"], 
+.main button[name="delete_option"] {
+    background-color: var(--main-clr);
+    color: var(--primary-text-clr);
+}
+
+.main button:hover {
+    opacity: 0.9;
+}
+
+.main form {
+    margin-bottom: 15px;
+}
+
+.main hr {
+    border: none;
+    border-top: 1px solid var(--third-bg-clr);
+    margin: 20px 0;
+}
+
+.main a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: var(--primary-bg-clr);
+    color: var(--primary-text-clr);
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.main a:hover {
+    background-color: #444;
+}

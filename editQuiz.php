@@ -107,9 +107,30 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Quiz bewerken</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/editQuiz.css">
 </head>
 
 <body>
+
+<header class="header">
+        <div class="container">
+            <h1 class="logo">QuizApp</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="#">Scores</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.php" class="btn login">Login</a> 
+                <a href="register.php" class="btn signup">Sign Up</a> 
+            </div>
+        </div>
+    </header>
+
+
     <main class="main">
     <h1>Quiz bewerken</h1>
     <form action="" method="post">
@@ -166,6 +187,32 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <a href="teacher.php">Terug</a>
     </main>
+
+    <footer class="footer">
+        <div class="container footer-content"> 
+            <div class="footer-section">
+                <h4>HersenHap</h4>
+                <p>Test je kennis en daag jezelf uit met onze quizzen.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul> 
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="#">Scores</a></li>
+                    <li><a href="#">Over Ons</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@hersenhap.nl</p>
+                <p>Tel: 020-1234567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 HersenHap. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
