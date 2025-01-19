@@ -1,5 +1,11 @@
 <?php
 session_start();
+require 'config.php';
+
+$stmt = $pdo->prepare("SELECT points, played_quizzes FROM users WHERE username = :username");
+$stmt->execute(['username' => $_SESSION['username']]);
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -62,8 +68,8 @@ session_start();
                     <h3>Jouw Statistieken</h3>
                     <p>Bekijk je voortgang en prestaties</p>
                     <ul>
-                        <li>Voltooide quizzen: <span>0</span></li>
-                        <li>Gemiddelde score: <span>-</span></li>
+                        <li>Voltooide quizzen: <?php echo $result['played_quizzes'] ?></li>
+                        <li>Aantal punten: <?php echo $result['points'] ?></li>
                     </ul>
                 </div>
             </div>

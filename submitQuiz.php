@@ -28,7 +28,6 @@ if (!$quizInfo) {
 }
 
 $correctAnswers = getCorrectAnswers($quiz_id);
-
 $score = 0;
 foreach ($correctAnswers as $correctAnswer) {
     if (isset($_POST['question_' . $correctAnswer['question_id']]) && 
@@ -36,6 +35,18 @@ foreach ($correctAnswers as $correctAnswer) {
         $score++;
     }
 }
+
+$stmt = $pdo->prepare("
+    UPDATE users 
+    SET points = points + :points, 
+        played_quizzes = played_quizzes + 1 
+    WHERE id = :user_id
+");
+$stmt->execute([
+    'points' => $score * 10,
+    'user_id' => $_SESSION['user_id']
+]);
+
 
 ?>
 
