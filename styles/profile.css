@@ -123,4 +123,6 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
+    margin-left: 22px;
+    text-decoration: none;
 }

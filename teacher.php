@@ -50,32 +50,34 @@ $quizzes = getUserQuizzes($user_id);
             </div>
         </div>
     </header>
+    
     <main class="main">
     <h1>Beheer mijn quizzen</h1>
     <div class="card">
-        <div class="row">
-            <div class="column">
-            <p class="ppp">Naam</p>
-    <?php if (count($quizzes) > 0): ?>
+        <div class="quiz-header">
+            <p>Naam</p>
+            <p>Functies</p>
+        </div>
+        <?php if (count($quizzes) > 0): ?>
             <?php foreach ($quizzes as $quiz): ?>
-                    <?php echo htmlspecialchars($quiz['quiz_name']); ?>
-            </div>
-            <div class="column">
-                <p class="ppp">Functies</p>
-                    <a href="editQuiz.php?quiz_id=<?php echo $quiz['quiz_id']; ?>">Bewerk</a>
-                    <form action="deleteQuiz.php" method="post" style="display:inline;" onsubmit="return confirm('Weet je zeker dat je deze quiz wilt verwijderen?');">
-                        <input type="hidden" name="quiz_id" value="<?php echo $quiz['quiz_id']; ?>">
-                        <button class="bton" type="submit">Verwijder</button>
-                    </form>
+                <div class="quiz-item">
+                    <p class="quiz-name"><?php echo htmlspecialchars($quiz['quiz_name']); ?></p>
+                    <div class="quiz-actions">
+                        <a href="editQuiz.php?quiz_id=<?php echo $quiz['quiz_id']; ?>" class="btn-edit">Bewerk</a>
+                        <form action="deleteQuiz.php" method="post" onsubmit="return confirm('Weet je zeker dat je deze quiz wilt verwijderen?');">
+                            <input type="hidden" name="quiz_id" value="<?php echo $quiz['quiz_id']; ?>">
+                            <button type="submit" class="btn-delete">Verwijder</button>
+                        </form>
                     </div>
+                </div>
             <?php endforeach; ?>
-    <?php else: ?>
-        <p>Je hebt nog geen quizzen gemaakt.</p>
-    <?php endif; ?>
+        <?php else: ?>
+            <p>Je hebt nog geen quizzen gemaakt.</p>
+        <?php endif; ?>
+        <button class="btnn" onclick="gotoQuiz()">Nieuwe quiz maken</button>
     </div>
-    <button class="btn" onclick="gotoQuiz()">Nieuwe quiz maken</button>
-    </div>
-    </main>
+</main>
+
 
     <footer class="footer">
         <div class="container footer-content"> 
@@ -99,7 +101,7 @@ $quizzes = getUserQuizzes($user_id);
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 HersenHap. Alle rechten voorbehouden.</p>
+            <p>© 2025 HersenHap. Alle rechten voorbehouden.</p>
         </div>
     </footer>
 
