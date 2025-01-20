@@ -56,7 +56,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
 <body>
 <header class="header">
     <div class="container">
-        <h1 class="logo">QuizApp</h1>
+        <h1 class="logo">HersenHap</h1>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
@@ -105,7 +105,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
 <footer class="footer">
     <div class="container footer-content"> 
         <div class="footer-section">
-            <h4>QuizApp</h4>
+            <h4>HersenHap</h4>
             <p>Test je kennis en daag jezelf uit met onze quizzen.</p>
         </div>
         <div class="footer-section">
@@ -124,7 +124,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2024 QuizApp. Alle rechten voorbehouden.</p>
+        <p>© 2025 HersenHap. Alle rechten voorbehouden.</p>
     </div>
 </footer>
 </body>
