@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($user && password_verify($currentPassword, $user['password'])) {
         if ($newPassword == $confirmPassword) {
-            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+            $hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
             $stmt = $pdo->prepare("UPDATE users SET password = :password WHERE id = :user_id");
             $stmt->execute(['password' => $hashedPassword, 'user_id' => $user_id]);
             $_SESSION['success'] = "Wachtwoord succesvol gewijzigd.";
