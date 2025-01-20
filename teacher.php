@@ -100,7 +100,7 @@ $quizzes = getUserQuizzes($user_id);
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 HersenHap. Alle rechten voorbehouden.</p>
+            <p>© 2025 HersenHap. Alle rechten voorbehouden.</p>
         </div>
     </footer>
 

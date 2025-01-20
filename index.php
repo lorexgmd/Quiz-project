@@ -13,7 +13,7 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
+    <title>HersenHap</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -42,7 +42,7 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <main class="main">
         <div class="container">
-            <h2>Welkom bij de Quiz App</h2>
+            <h2>Welkom bij HersenHap</h2>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <h3><?php echo $_SESSION['username']?></h3>
             <?php else: ?>
@@ -102,7 +102,7 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 HersenHap. Alle rechten voorbehouden.</p>
+            <p>© 2025 HersenHap. Alle rechten voorbehouden.</p>
         </div>
     </footer>
     <script>
