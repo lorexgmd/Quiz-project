@@ -50,6 +50,7 @@ $quizzes = getUserQuizzes($user_id);
             </div>
         </div>
     </header>
+    
     <main class="main">
     <h1>Beheer mijn quizzen</h1>
     <div class="card">
@@ -73,7 +74,7 @@ $quizzes = getUserQuizzes($user_id);
         <?php else: ?>
             <p>Je hebt nog geen quizzen gemaakt.</p>
         <?php endif; ?>
-        <button class="btn" onclick="gotoQuiz()">Nieuwe quiz maken</button>
+        <button class="btnn" onclick="gotoQuiz()">Nieuwe quiz maken</button>
     </div>
 </main>
 

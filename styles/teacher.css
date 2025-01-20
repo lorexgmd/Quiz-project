@@ -88,7 +88,7 @@ h1 {
     font-size: var(--small-size);
 }
 
-.btn {
+.btnn {
     width: 100%;
     background-color: var(--main-clr);
     color: var(--primary-text-clr);
@@ -101,7 +101,7 @@ h1 {
     border: none;
 }
 
-.btn:hover {
+.btnn:hover {
     background-color: var(--hover-button-clr);
 }
 
