@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include 'bannedUsernames.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
@@ -9,20 +10,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($username) || empty($password) || empty($role)) {
         echo "Alle velden zijn verplicht!";
     } else {
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-        $stmt->execute(['username' => $username]);
-        if ($stmt->rowCount() > 0) {
-            echo "Gebruikersnaam bestaat al!";
+        if (in_array($username, $forbidden_usernames)){
+            echo "Gebruikersnaam staat in blacklist!";
         } else {
-            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+            $stmt->execute(['username' => $username]);
+            if ($stmt->rowCount() > 0) {
+                echo "Gebruikersnaam bestaat al!";
+            } else {
+                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-            $stmt = $pdo->prepare("INSERT INTO users (username, password, role) VALUES (:username, :password, :role)");
-            $stmt->execute([
-                'username' => $username,
-                'password' => $hashedPassword,
-                'role' => $role
-            ]);
-            echo "Registratie succesvol! <a href='login.php'>Log hier in</a>";
+                $stmt = $pdo->prepare("INSERT INTO users (username, password, role) VALUES (:username, :password, :role)");
+                $stmt->execute([
+                    'username' => $username,
+                    'password' => $hashedPassword,
+                    'role' => $role
+                ]);
+                echo "Registratie succesvol! <a href='login.php'>Log hier in</a>";
+            }
         }
     }
 }
