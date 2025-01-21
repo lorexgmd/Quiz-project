@@ -97,15 +97,9 @@ if (isset($_SESSION['user_id'])) {
             </div>
             <div class="footer-section">
                 <h4>Links</h4>
-<<<<<<< Updated upstream
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Quizzes</a></li>
-=======
                 <ul> 
                     <li><a href="index.html">Home</a></li>
                     <li><a href="quizzen.php">Quizzes</a></li>
->>>>>>> Stashed changes
                     <li><a href="#">Scores</a></li>
                 </ul>
             </div>
