@@ -123,11 +123,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>© 2025 HersenHap. Alle rechten voorbehouden.</p>
         </div>
     </footer>
-
-
-    <p class="login-link">
-        Heb je al een account? <a href="login.php">Inloggen</a>
-    </p>
     </form>
     </div>
 </body>
