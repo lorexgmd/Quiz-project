@@ -108,10 +108,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="footer-section">
                 <h4>Links</h4>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="quizzen">Quizzes</a></li>
                     <li><a href="#">Scores</a></li>
-                    <li><a href="#">Over Ons</a></li>
                 </ul>
             </div>
             <div class="footer-section">
