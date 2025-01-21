@@ -33,7 +33,7 @@ main {
     box-sizing: border-box;
 }
 
-h1 {
+main h1 {
     color: var(--main-clr);
     border-bottom: 2px solid var(--main-clr);
     padding-bottom: 10px;

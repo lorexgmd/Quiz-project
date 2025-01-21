@@ -29,7 +29,7 @@ html, body {
     background-color: var(--secondary-bg-clr);
 }
 
-h1 {
+.main h1 {
     font-size: var(--title-size);
     margin-bottom: 20px;
     color: var(--main-clr);
