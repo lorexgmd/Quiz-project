@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Quizzes</a></li>
-                    <li><a href="#">Scores</a></li>
+                    <li><a href="quizzen.php">Quizzes</a></li>
+                    <li><a href="scores.php">Scores</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <ul> 
                     <li><a href="index.html">Home</a></li>
                     <li><a href="quizzen.php">Quizzes</a></li>
-                    <li><a href="#">Scores</a></li>
+                    <li><a href="scores.php">Scores</a></li>
                 </ul>
             </div>
             <div class="footer-section">

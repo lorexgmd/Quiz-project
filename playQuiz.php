@@ -61,7 +61,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="quizzen.php">Quizzes</a></li>
-                <li><a href="#">Scores</a></li>
+                <li><a href="scores.php">Scores</a></li>
             </ul>
         </nav>
         <div class="auth-buttons">
@@ -113,7 +113,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
             <ul> 
                 <li><a href="index.php">Home</a></li>
                 <li><a href="quizzen.php">Quizzes</a></li>
-                <li><a href="#">Scores</a></li>
+                <li><a href="scores.php">Scores</a></li>
             </ul>
         </div>
         <div class="footer-section">
