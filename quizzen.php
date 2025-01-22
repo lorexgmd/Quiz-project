@@ -117,5 +117,7 @@ $totalPages = getTotalPages();
         <p>© 2025 HersenHap. Alle rechten voorbehouden.</p>
     </div>
 </footer>
+
+<script src="js/javascript.js"></script>
 </body>
 </html>

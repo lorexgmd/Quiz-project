@@ -118,6 +118,7 @@ if (isset($_SESSION['user_id'])) {
             window.location.href = "quizzen.php";
         }
     </script>
+    <script src="js/javascript.js"></script>
 </body>
 
 </html>

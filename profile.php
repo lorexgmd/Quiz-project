@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <?php if ($_SESSION['role'] == 'teacher'): ?>
-                    <a href="teacher.php" class="teacherLink">Beheer quiz</a>
+                    <a href="teacher.php" class="btn teacherLink">Beheer quiz</a>
                 <?php endif; ?>
             <?php endif; ?>
 
@@ -142,6 +142,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p>© 2025 Hersenhap. Alle rechten voorbehouden.</p>
         </div>
     </footer>
+
+    <script src="js/javascript.js"></script>
 </body>
 
 </html>
