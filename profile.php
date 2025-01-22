@@ -85,8 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label>Rol</label>
                     <input type="text" value="<?php echo $_SESSION['role']; ?>" disabled>
                 </div>
-
-                <button class="btn">Gegevens Bijwerken</button>
             </div>
 
             <form action="profile.php" method="POST">
