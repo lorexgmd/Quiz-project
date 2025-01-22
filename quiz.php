@@ -9,6 +9,7 @@ set_time_limit(300);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = htmlspecialchars($_POST['name']);
     $creator = htmlspecialchars($_POST['creator']);
+    $description = htmlspecialchars($_POST['description']);
     
     $questions = [];
     $options = [];
@@ -22,13 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    $quiz = new Quiz($name, $creator, $questions);
+    $quiz = new Quiz($name, $creator, $questions, $description);
 
     try {
         $pdo->beginTransaction();
 
-        $stmt = $pdo->prepare("INSERT INTO Quiz (quiz_name, created_by) VALUES (?, ?)");
-        $stmt->execute([$quiz->getName(), $_SESSION['user_id']]);
+        $stmt = $pdo->prepare("INSERT INTO Quiz (quiz_name, created_by, description) VALUES (?, ?, ?)");
+        $stmt->execute([$quiz->getName(), $_SESSION['user_id'], $quiz->getDescription()]);
         $quizId = $pdo->lastInsertId();
 
         foreach ($quiz->getQuestions() as $index => $questionText) {
@@ -93,6 +94,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <label for="creator">Maker:</label><br>
         <input type="text" id="creator" name="creator" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <input type="text" id="description" name="description" required><br><br>
 
         <div id="questions-section">
             <div class="question-entry">

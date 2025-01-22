@@ -45,7 +45,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +84,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
         <input type="hidden" name="quiz_id" value="<?php echo $quiz_id; ?>">
 
         <?php foreach ($questionsWithOptions as $index => $questionWithOptions): ?>
-            <div class="quiz-question">
+            <div class="quiz-question" style="display: none;">
                 <p><?php echo htmlspecialchars($questionWithOptions['question']['question_text']); ?></p>
                 <?php foreach ($questionWithOptions['options'] as $option): ?>
                     <div class="option">
@@ -92,13 +92,17 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
                                id="q<?php echo $index; ?>_option<?php echo $option['option_id']; ?>" 
                                name="question_<?php echo $questionWithOptions['question']['question_id']; ?>" 
                                value="<?php echo $option['option_id']; ?>" required>
-                        <label for="q<?php echo $index; ?>_option<?php echo $option['option_id']; ?>"><?php echo htmlspecialchars($option['option_text']); ?></label>
+                        <label for="q<?php echo $index; ?>_option<?php echo $option['option_id']; ?>">
+                            <?php echo htmlspecialchars($option['option_text']); ?>
+                        </label>
                     </div>
                 <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
 
-        <button type="submit" class="btn">Verstuur Quiz</button>
+        <button type="button" id="prev" class="btn" style="display: none;">Vorige</button>
+        <button type="button" id="next" class="btn">Volgende</button>
+        <button type="submit" id="submit" class="btn" style="display: none;">Verstuur Quiz</button>
     </form>
 </main>
 
@@ -126,5 +130,41 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
         <p>© 2025 HersenHap. Alle rechten voorbehouden.</p>
     </div>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let currentQuestion = 0;
+    const questions = document.querySelectorAll(".quiz-question");
+    const nextButton = document.getElementById("next");
+    const prevButton = document.getElementById("prev");
+    const submitButton = document.getElementById("submit");
+
+    function showQuestion(index) {
+        questions.forEach((q, i) => {
+            q.style.display = i === index ? "block" : "none";
+        });
+
+        prevButton.style.display = index === 0 ? "none" : "inline-block";
+        nextButton.style.display = index === questions.length - 1 ? "none" : "inline-block";
+        submitButton.style.display = index === questions.length - 1 ? "block" : "none";
+    }
+
+    nextButton.addEventListener("click", function () {
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
+            showQuestion(currentQuestion);
+        }
+    });
+
+    prevButton.addEventListener("click", function () {
+        if (currentQuestion > 0) {
+            currentQuestion--;
+            showQuestion(currentQuestion);
+        }
+    });
+
+    showQuestion(currentQuestion);
+});
+</script>
 </body>
 </html>
