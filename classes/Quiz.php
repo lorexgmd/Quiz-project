@@ -3,13 +3,14 @@
         private $name;
         private $creator;
         private $questions;
-        private $options;
-        private $answer;
+        private $description;
+        
 
-        public function __construct($name, $creator, $questions){
+        public function __construct($name, $creator, $questions, $description){
             $this->name = $name;
             $this->creator = $creator;
             $this->questions = $questions;
+            $this->description = $description;
         }
 
         public function getName(){
@@ -24,5 +25,8 @@
             return $this->questions;
         }
          
+        public function getDescription(){
+            return $this->description;
+        }
     }
 ?>

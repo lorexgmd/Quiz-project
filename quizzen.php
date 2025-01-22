@@ -53,7 +53,7 @@ $quizzes = getQuizzes();
         <?php foreach ($quizzes as $quiz): ?>
             <div class="quiz-item">
                 <h3><?php echo htmlspecialchars($quiz['quiz_name']); ?></h3>
-                <p>Test je kennis over verschillende onderwerpen</p>
+                <p> <?php echo htmlspecialchars($quiz['description']); ?> </p>
                 <form action="playQuiz.php" method="get">
                     <input type="hidden" name="quiz_id" value="<?php echo $quiz['quiz_id']; ?>">
                     <button class="btn start" type="submit">Start</button>
