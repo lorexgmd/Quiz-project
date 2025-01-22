@@ -2,13 +2,34 @@
 session_start();
 require 'config.php';
 
-function getQuizzes() {
+function getQuizzes($page = 1, $limit = 3) {
     global $pdo;
-    $stmt = $pdo->query("SELECT * FROM Quiz");
+    
+    // Bereken de offset voor de pagina
+    $offset = ($page - 1) * $limit;
+    
+    // Haal de quizzen op voor de huidige pagina
+    $stmt = $pdo->prepare("SELECT * FROM Quiz LIMIT :limit OFFSET :offset");
+    $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+    $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+    $stmt->execute();
+    
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-$quizzes = getQuizzes();
+function getTotalPages($limit = 3) {
+    global $pdo;
+    $stmt = $pdo->query("SELECT COUNT(*) FROM Quiz");
+    $totalQuizzes = $stmt->fetchColumn();
+    
+    return ceil($totalQuizzes / $limit); // Ronde af naar boven om het totaal aantal pagina's te krijgen
+}
+
+// Haal de huidige pagina op (standaard is pagina 1)
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+$quizzes = getQuizzes($page);
+$totalPages = getTotalPages();
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +74,7 @@ $quizzes = getQuizzes();
         <?php foreach ($quizzes as $quiz): ?>
             <div class="quiz-item">
                 <h3><?php echo htmlspecialchars($quiz['quiz_name']); ?></h3>
-                <p> <?php echo htmlspecialchars($quiz['description']); ?> </p>
+                <p><?php echo htmlspecialchars($quiz['description']); ?></p>
                 <form action="playQuiz.php" method="get">
                     <input type="hidden" name="quiz_id" value="<?php echo $quiz['quiz_id']; ?>">
                     <button class="btn start" type="submit">Start</button>
@@ -62,12 +83,13 @@ $quizzes = getQuizzes();
         <?php endforeach; ?>
     </div>
     
+    <!-- Paginering -->
     <div class="pagination">
-        <button class="page">1</button>
-        <button class="page">2</button>
-        <button class="page">3</button>
-        <span>...</span>
-        <button class="page">10</button>
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <a href="?page=<?php echo $i; ?>" class="page <?php echo $i == $page ? 'active' : ''; ?>">
+                <?php echo $i; ?>
+            </a>
+        <?php endfor; ?>
     </div>
 </main>
 
