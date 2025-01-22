@@ -109,5 +109,6 @@ $quizzes = getUserQuizzes($user_id);
             window.location.href = 'quiz.php';
         }
     </script>
+
 </body>
 </html>
