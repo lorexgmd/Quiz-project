@@ -51,6 +51,7 @@ $allQuizzes = getAllQuizzes(); // Haal alle quizzen op
     <title>Quizzes</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleQuiz.css">
+    <link rel="icon" href="img/HersenHap.png" type="image/x-icon">
 </head>
 
 <body>

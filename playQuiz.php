@@ -52,6 +52,7 @@ $questionsWithOptions = getQuestionsAndOptions($quiz_id);
     <title>Speel Quiz - <?php echo htmlspecialchars($quizInfo['quiz_name']); ?></title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/stylePlayQuiz.css">
+    <link rel="icon" href="img/HersenHap.png" type="image/x-icon">
 </head>
 <body>
 <header class="header">

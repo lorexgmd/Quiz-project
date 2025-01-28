@@ -121,6 +121,7 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Quiz bewerken</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/editQuiz.css">
+    <link rel="icon" href="img/HersenHap.png" type="image/x-icon">
 </head>
 
 <body>

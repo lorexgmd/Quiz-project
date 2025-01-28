@@ -21,6 +21,7 @@
     <title>Scorebord</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleScores.css">
+    <link rel="icon" href="img/HersenHap.png" type="image/x-icon">
 </head>
 <body>
 <header class="header">

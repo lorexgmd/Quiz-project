@@ -18,6 +18,7 @@ if (isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HersenHap</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="img/HersenHap.png" type="image/x-icon">
 </head>
 
 <body>

@@ -25,6 +25,7 @@ $quizzes = getUserQuizzes($user_id);
     <title>Mijn Quizzen</title>
     <link rel="stylesheet" href="styles/Style.css">
     <link rel="stylesheet" href="styles/teacher.css">
+    <link rel="icon" href="img/HersenHap.png" type="image/x-icon">
 </head>
 <body>
 

@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/profile.css">
+    <link rel="icon" href="img/HersenHap.png" type="image/x-icon">
 </head>
 
 <body>
